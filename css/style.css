@@ -232,34 +232,42 @@ body {
 }
 
 /*--- CHAT ---*/
-.display-message{
+
+.chat{
   background-image: url("../img/mine.jpg");
   padding: var(--gutter-xxl) 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-.display-message__list{
+
+.row{
   display: flex;
 }
 
-.message--received{
+.row--sent{
+  justify-content: right;
+}
+
+.chat__message--received{
   background-color: var(--clr-msg-received);
 }
-.message--sent{
+.chat__message--sent{
   background-color: var(--clr-msg-sent);
-
 }
 
 .message{
-  margin: var(--gutter-sm);
-  border-radius: 0.5rem;
+  width: 40%;
   position: relative;
-  padding: var(--gutter-md) var(--gutter-xl);
+  padding: 1.5rem;
+  border-radius: 1rem;
 }
 .message__time{
   font-size: x-small;
   opacity: 0.5;
   position: absolute;
-  bottom: 3px;
-  right: 3px;
+  bottom: 5px;
+  right: 10px;
 }
 
 
