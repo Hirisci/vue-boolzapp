@@ -85,22 +85,23 @@ body {
 
 /*--- Struttura ---*/
 #app {
-  max-width: 90%;
-  height: 95vh;
-  display: grid;
-  grid-template-columns: 1fr  2fr;
+  width: 90%;
+  height: 90%;
+  display: flex;
 }
 
-.app {
+.app{
   display: flex;
   flex-direction: column;
 }
 
 .app--sx {
+  width: 40%;
   background-color: var(--clr-bg-contact);
 }
 
 .app--dx {
+  width: 100%;
   justify-content: space-between;
 }
 
@@ -109,6 +110,7 @@ body {
 }
 
 .app__coomponet--big {
+  overflow-y: scroll;
   flex-grow: 1;
 }
 
@@ -119,10 +121,10 @@ body {
 
 /*--- USER ---*/
 
-.user-info {
+.user-info{
+  display: flex;
   height: var(--height-item);
   background-color: var(--clr-header-cln);
-  display: flex;
   justify-content: space-between;
 }
 
@@ -138,7 +140,7 @@ body {
   aspect-ratio: 1/1;
   height: 100%;
   border-radius: 100%;
-}
+} 
 
 /*--- NOTIFICATION ---*/
 
@@ -239,6 +241,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+.user-info__access{
+  font-size: 0.75rem;
+  opacity: 0.5;
 }
 
 .row{

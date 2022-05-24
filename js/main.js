@@ -164,8 +164,52 @@ let app = new Vue({
         ],
       },
     ],
+    currentChat : 0,
+    messageText : "",
   },
   methods:{
+    imgAvatar(i){
+        return "img/avatar"+this.contacts[i].avatar+".jpg"
+    },
+    lastMessages(i){
+      return this.contacts[i].messages[this.contacts[i].messages.length-1]
+    },
+    lastMessage(i){
+      return this.lastMessages(i).message
+    },
+    getTime(i){
+      let arr = this.lastMessages(i).date.split(" ")
+      arr = arr[1].split(":")
+      return `${arr[0]}:${arr[1]}`
+    },
+    getTimeChat(date){
+      let arr = date.split(" ")
+      arr = arr[1].split(":")
+      return `${arr[0]}:${arr[1]}`
+    },
+    selectChat(index){
+      this.currentChat=index
+    },
+    addMessageText(){
+      this.createDate();
+      let msg={
+        date: "10/01/2020 15:51:00",
+        message: this.messageText,
+        status: "sent",
+      }
+      this.contacts[this.currentChat].messages.push(msg)
+      this.messageText=""
+    },
+    createDate(){
+      let date = new Date()
+      let day = `${date.getDate()}/${date.getDate()}/${date.getDate()}`
+      let time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+      return `${day} ${time}`
+    }
 
+
+  },
+  computed:{
+    
   }
 });
