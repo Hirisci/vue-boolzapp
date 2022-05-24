@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet"> 
+    <!-- FOGLI DI STILE -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- VUE-JS VERSION 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Nuovo Progetto</title>
+</head>
+<body>
+    <div id="app">
+        <div class="app app--sx">
+            <div class="app__component user-info">
+                <div class="user-info__sx">
+                    <img class="user-info__img" src="img/avatar_io.jpg" alt="avatar" >
+                    <div class="user-info__name">Name</div>
+                </div>
+                <div class="user-info__dx">
+                    <button class="btn btn--user btn-stories"><i class="fa-solid fa-circle-notch"></i></button>
+                    <button class="btn btn--user btn-new-message"><i class="fa-solid fa-message"></i></button>
+                    <button class="btn btn--user btn-settings"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+            </div>
+            <div class="app__component notification">
+                <div class="notification__icon"><i class="fa-solid fa-bell-slash"></i></div>
+                <div class="notification__info">
+                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <a>Attiva notifiche descktop</a>
+                </div>
+
+            </div>
+            <div class="app__component search-bar">
+                <div class="search-bar__icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <input class="search-bar__input" type="text" placeholder="Inizia o cerca una conversazione">
+            </div>
+            <div class="app__coomponet--big">
+                <div class="contact">
+                    <div class="contact__sx">
+                        <img class="contact__img" src="img/avatar_1.jpg" alt="foto">
+                        <div class="contact__info">
+                            <div class="contact__name">Nome</div>
+                            <div class="contact__last-msg">Ultimo messaggio inviato</div>
+                        </div>
+                    </div>
+                    <div class="contact__time">12:00</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="app app--dx">
+            <div class="app__component user-info">
+                <div class="user-info__sx">
+                    <img class="user-info__img" src="img/avatar_io.jpg" alt="avatar" >
+                    <div class="user-info__name">Name</div>
+                </div>
+                <div class="user-info__dx">
+                    <button class="btn btn--user btn-serch"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <button class="btn btn--user btn-attached"><i class="fa-solid fa-paperclip"></i></button>
+                    <button class="btn btn--user btn-settings"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                </div>
+            </div>
+            <div class="app__component app__coomponet--big display-message">
+                <div class="display-message__list">
+                    <div class="message message--sent">
+                        <div class="message__text">test</div>
+                        <div class="message__time">10.22</div>
+                    </div>
+                </div>
+                <div class="display-message__list">
+                    <div class="message message--received">
+                        <div class="message__text">test</div>
+                        <div class="message__time">10.22</div>
+                    </div>
+                </div>
+            </div>
+            <div class="app__component input">
+                <button class="btn btn--input btn--emoticon">
+                    <i class="fa-regular fa-face-grin"></i>
+                </button>
+                <input type="text" class="input__text" placeholder="Scrivi un messaggio">
+                <button class="btn btn--input btn--microphone">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+            </div>
+            
+            
+        </div>   
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
