@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FOGLI DI STILE -->
+    <link rel="stylesheet" href="css/style2.css" />
+    <!-- VUE-JS VERSION 2 -->
+    
+    <title>Refactoring</title>
+  </head>
+  <body>
+
+    <div id="app" class="app">
+        <div class="app__left">
+            <div class="component component-user">
+                <div class="component-user__info">
+                    <img src="img/avatar_io.jpg" alt="Avatar" class="component-user__img">
+                    <div class="component-user__name">Sonia</div>
+                </div>
+                <div class="component-user__button">
+                    <button class="btn btn--user">
+                      <i class="fa-solid fa-circle-notch"></i>
+                    </button>
+                    <button class="btn btn--user">
+                      <i class="fa-solid fa-message"></i>
+                    </button>
+                    <button class="btn btn--user">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="app__rigth">
+            <div class="component chat-active">
+                <div class="chat-active__info">
+                    <img src="img/avatar_io.jpg" alt="Avatar" class="chat-active__img">
+                    <div class="chat-active__name">Sonia</div>
+                </div>
+                <div class="chat-active__button">
+                    <button class="btn btn--user btn-serch">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <button class="btn btn--user btn-attached">
+                      <i class="fa-solid fa-paperclip"></i>
+                    </button>
+                    <button class="btn btn--user btn-settings">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

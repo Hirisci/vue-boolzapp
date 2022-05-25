@@ -1,58 +1,14 @@
-/*╔═══════════════╗
-      VARIABILI
-  ╚═══════════════╝*/
+/*╔═══════════════════════════╗
+            HELPERS
+  ╚═══════════════════════════╝*/
+@import "config/_variable.css";
+@import "config/_reset.css";
+@import "config/_global.css";
+@import "config/_typography.css";
 
-:root {
-  /*--- COLORI ---*/
-  /* GRADIENT */
-  --clr-gradient-first: #009688;
-  --clr-gradient-second: #dbdbd2;
-  /* NOTIFICATION */
-  --clr-notification: #8edafc;
-  /* STRUTTURA */
-  --clr-header-cln: #e6dfd6;
-  --clr-bg-footer-msg: #f3eeea;
+           
 
-  /* CONTACT */
-  --clr-bg-contact: #fff;
-  --clr-hover-contact: #f4f5f5;
-  --clr-bg-serch-contact: #fafafa;
 
-  /* MSG */
-  --clr-msg-received: rgb(255, 255, 255);
-  --clr-msg-sent: rgb(213, 249, 186);
-
-  /*- DIMENSIONI GUTTER*/
-  --height-item: 4rem;
-  --height-contact: 2rem;
-
-  --gutter-xs: 0.25rem;
-  --gutter-sm: 0.5rem;
-  --gutter-md: 1rem;
-  --gutter-lg: 1.5rem;
-  --gutter-xl: 2rem;
-  --gutter-xxl: 3rem;
-}
-
-/*╔═══════════════╗
-       DEBUG
-  ╚═══════════════╝*/
-
-/*╔═══════════════╗
-       COMMON
-  ╚═══════════════╝*/
-
-body {
-  font-family: "Lato", sans-serif;
-  height: 100vh;
-  background: linear-gradient(
-    to top,
-    var(--clr-gradient-second) 85%,
-    var(--clr-gradient-first) 15%
-  );
-  display: grid;
-  place-items: center;
-}
 
 /*--- BTN ---*/
 
@@ -64,7 +20,7 @@ body {
 
 .btn--user {
   aspect-ratio: 1/1;
-  height: 30px;
+  height: 1.875rem;
   font-size: 1.2rem;
   opacity: 0.3;
 }
@@ -75,7 +31,7 @@ body {
 
 .btn--input{
   padding: 0 var(--gutter-xxl);
-  height: 30px;
+  height: 1.875rem;
   font-size: 1.2rem;
 }
 
@@ -86,7 +42,7 @@ body {
 /*--- Struttura ---*/
 #app {
   width: 90%;
-  height: 90%;
+  height: 95%;
   display: flex;
 }
 
@@ -133,7 +89,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: .5rem;
 }
 
 .user-info__img {
@@ -179,7 +135,7 @@ body {
   flex-direction: row;
   align-items: center;
   background-color: var(--clr-bg-serch-contact);
-  padding: 0.5rem;
+  padding: .5rem;
   gap: 3px;
 }
 
@@ -229,7 +185,7 @@ body {
 }
 
 .contact__last-msg,.contact__time{
-  font-size: 0.75rem;
+  font-size: .75rem;
   opacity: 0.5;
 }
 
@@ -243,7 +199,7 @@ body {
   gap: 1rem;
 }
 .user-info__access{
-  font-size: 0.75rem;
+  font-size: .75rem;
   opacity: 0.5;
 }
 
@@ -287,5 +243,5 @@ body {
 .input__text{
   flex-grow: 1;
   border: transparent;
-  padding: 0.5rem;
+  padding: .5rem;
 }

@@ -1,0 +1,13 @@
+
+body {
+    font-family: "Lato", sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      to top,
+      var(--clr-gradient-second) 85%,
+      var(--clr-gradient-first) 15%
+    );
+}

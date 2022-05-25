@@ -1,0 +1,15 @@
+.app{
+    width: var(--wdt-container);
+    height: 90%;
+    display: flex;
+}
+
+.app__left{
+    width: 30%;
+    background-color: white;
+}
+
+.app__rigth{
+    width: 70%;
+    justify-content: space-between;
+}

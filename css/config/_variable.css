@@ -1,0 +1,35 @@
+:root {
+  /*╔════════════════════════════╗
+            COLORS
+    ╚════════════════════════════╝*/
+
+  /* GRADIENT */
+  --clr-gradient-first: #009688;
+  --clr-gradient-second: #dbdbd2;
+  /* OBJECT */
+  --clr-notification: #8edafc;
+  --clr-bg-component: #e6dfd6;
+  --clr-bg-footer-msg: #f3eeea;
+  --clr-bg-contact: #fff;
+  --clr-hover-contact: #f4f5f5;
+  --clr-bg-serch-bar: #fafafa;
+  --clr-msg-received: rgb(255, 255, 255);
+  --clr-msg-sent: rgb(213, 249, 186);
+  /*╔════════════════════════════╗
+        COMPONENT DIMENSION
+    ╚════════════════════════════╝*/
+  /* width */
+  --wdt-container: 100rem;
+  /* heigth */
+  --hgt-item: 4rem;
+
+  /*╔════════════════════════════╗
+              GUTTERS
+    ╚════════════════════════════╝*/
+  --gutter-xs: 0.25rem;
+  --gutter-sm: 0.5rem;
+  --gutter-md: 1rem;
+  --gutter-lg: 1.5rem;
+  --gutter-xl: 2rem;
+  --gutter-xxl: 3rem;
+}

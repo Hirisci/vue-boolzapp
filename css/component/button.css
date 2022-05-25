@@ -1,0 +1,22 @@
+.btn {
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+
+.btn--user {
+  aspect-ratio: 1/1;
+  height: 1.875rem;
+  font-size: 1.2rem;
+  opacity: 0.3;
+}
+
+.btn--user:hover {
+  opacity: 1;
+}
+
+.btn--input {
+  padding: 0 var(--gutter-xxl);
+  height: 1.875rem;
+  font-size: 1.2rem;
+}

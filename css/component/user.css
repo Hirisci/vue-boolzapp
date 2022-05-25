@@ -1,0 +1,40 @@
+.component{
+    height: var(--hgt-item);
+    padding: var(--gutter-sm);
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.component-user{
+    background-color: var(--clr-bg-component);
+}
+
+
+.component-user__info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gutter-md);
+    width: 50%;
+}
+.component-user__button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gutter-md);
+    margin-right: var(--gutter-md);
+}
+
+.component-user__img{
+    height: 100%;
+    border-radius: 100%;
+}
+
+.component-user__name{
+    font-size: 1.1rem;
+}
+
+
+
