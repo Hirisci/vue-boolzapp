@@ -166,6 +166,7 @@ let app = new Vue({
     ],
     currentChat : 0,
     messageText : "",
+    filter: "",
   },
   methods:{
     imgAvatar(i){
@@ -191,25 +192,38 @@ let app = new Vue({
       this.currentChat=index
     },
     addMessageText(){
-      this.createDate();
       let msg={
-        date: "10/01/2020 15:51:00",
+        date: this.createDate(),
         message: this.messageText,
         status: "sent",
       }
       this.contacts[this.currentChat].messages.push(msg)
       this.messageText=""
+
+      setTimeout(()=>{
+        let msg={
+          date: this.createDate(),
+          message: "ok",
+          status: "received",
+        }
+        this.contacts[this.currentChat].messages.push(msg)
+     }, 1000)
     },
     createDate(){
       let date = new Date()
       let day = `${date.getDate()}/${date.getDate()}/${date.getDate()}`
-      let time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+      minute = date.getMinutes()
+      if(minute.length<2){
+         minute = "0"+minute
+      }
+      let time = `${date.getHours()}:${minute}:${date.getSeconds()}`
       return `${day} ${time}`
     }
 
 
   },
   computed:{
-    
+    filterByName(){
+      return this.contacts.filter(elm=> elm.name.toLowerCase().startsWith(this.filter))    }
   }
 });

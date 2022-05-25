@@ -63,6 +63,7 @@
             class="search-bar__input"
             type="text"
             placeholder="Inizia o cerca una conversazione"
+            v-model="filter"
           />
         </div>
         <!-- contatti -->
@@ -70,7 +71,7 @@
           <div
             class="contact"
             @click="selectChat(index)"
-            v-for="(obj,index) in contacts"
+            v-for="(obj,index) in filterByName"
           >
             <div class="contact__sx">
               <img class="contact__img" :src="imgAvatar(index)" alt="foto" />
