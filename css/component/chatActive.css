@@ -25,3 +25,8 @@
 .chat-active__name {
   font-size: 1.1rem;
 }
+
+.chat-active__access {
+  font-size: 0.75rem;
+  opacity: 0.5;
+}

@@ -14,3 +14,11 @@
 .component--small{
     height: var(--hgt-item-sm);
 }
+
+.component--scroll{
+    padding: 0;
+    overflow-y: auto;
+    justify-content: start;
+    flex-direction: column;
+    flex-grow: 1;
+}

@@ -164,66 +164,67 @@ let app = new Vue({
         ],
       },
     ],
-    currentChat : 0,
-    messageText : "",
+    currentChat: 0,
+    messageText: "",
     filter: "",
   },
-  methods:{
-    imgAvatar(i){
-        return "img/avatar"+this.contacts[i].avatar+".jpg"
+  methods: {
+    imgAvatar(i) {
+      return "img/avatar" + this.contacts[i].avatar + ".jpg";
     },
-    lastMessages(i){
-      return this.contacts[i].messages[this.contacts[i].messages.length-1]
+    lastMessages(i) {
+      return this.contacts[i].messages[this.contacts[i].messages.length - 1];
     },
-    lastMessage(i){
-      return this.lastMessages(i).message
+    lastMessage(i) {
+      return this.lastMessages(i).message;
     },
-    getTime(i){
-      let arr = this.lastMessages(i).date.split(" ")
-      arr = arr[1].split(":")
-      return `${arr[0]}:${arr[1]}`
+    getTime(i) {
+      let arr = this.lastMessages(i).date.split(" ");
+      arr = arr[1].split(":");
+      return `${arr[0]}:${arr[1]}`;
     },
-    getTimeChat(date){
-      let arr = date.split(" ")
-      arr = arr[1].split(":")
-      return `${arr[0]}:${arr[1]}`
+    getTimeChat(date) {
+      let arr = date.split(" ");
+      arr = arr[1].split(":");
+      return `${arr[0]}:${arr[1]}`;
     },
-    selectChat(index){
-      this.currentChat=index
+    selectChat(index) {
+      this.currentChat = index;
     },
-    addMessageText(){
-      let msg={
+    addMessageText() {
+      let msg = {
         date: this.createDate(),
         message: this.messageText,
         status: "sent",
-      }
-      this.contacts[this.currentChat].messages.push(msg)
-      this.messageText=""
+      };
+      this.contacts[this.currentChat].messages.push(msg);
+      this.messageText = "";
 
-      setTimeout(()=>{
-        let msg={
+      setTimeout(() => {
+        let msg = {
           date: this.createDate(),
           message: "ok",
           status: "received",
-        }
-        this.contacts[this.currentChat].messages.push(msg)
-     }, 1000)
+        };
+        this.contacts[this.currentChat].messages.push(msg);
+      }, 1000);
     },
-    createDate(){
-      let date = new Date()
-      let day = `${date.getDate()}/${date.getDate()}/${date.getDate()}`
-      minute = date.getMinutes()
-      if(minute.length<2){
-         minute = "0"+minute
+    createDate() {
+      let date = new Date();
+      let day = `${date.getDate()}/${date.getDate()}/${date.getDate()}`;
+      minute = date.getMinutes();
+      if (minute.length < 2) {
+        minute = "0" + minute;
       }
-      let time = `${date.getHours()}:${minute}:${date.getSeconds()}`
-      return `${day} ${time}`
-    }
-
-
+      let time = `${date.getHours()}:${minute}:${date.getSeconds()}`;
+      return `${day} ${time}`;
+    },
   },
-  computed:{
-    filterByName(){
-      return this.contacts.filter(elm=> elm.name.toLowerCase().startsWith(this.filter))    }
-  }
+  computed: {
+    filterByName() {
+      return this.contacts.filter((elm) =>
+        elm.name.toLowerCase().startsWith(this.filter)
+      );
+    },
+  },
 });

@@ -1,0 +1,32 @@
+.contact {
+    height: var(--hgt-item);
+    padding: var(--gutter-sm);
+    display: flex;    
+}
+
+.contact:hover {
+  background-color: var(--clr-hover-contact);
+}
+.contact__sx {
+    width: 80%;
+    display: flex;
+    gap: var(--gutter-md);
+  
+}
+.contact__dx {
+    width: 20%;
+    text-align: right;    
+}
+
+.contact__img {
+    margin: 0 var(--gutter-xs);
+    height: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 100%;   
+}
+
+.contact__last-msg,
+.contact__time {
+  font-size: 0.75rem;
+  opacity: 0.5;
+}

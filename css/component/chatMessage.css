@@ -1,0 +1,29 @@
+.chat-message {
+  background-image: url(../../img/mine.jpg);
+  padding: var(--gutter-xxl);
+  gap: var(--gutter-md);
+}
+
+.chat-message__bubble {
+  width: 40%;
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.chat-message__bubble-time {
+  font-size: x-small;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+.chat-message__bubble--received {
+  background-color: var(--clr-msg-received);
+}
+
+.chat-message__bubble--sent {
+  background-color: var(--clr-msg-sent);
+  align-self: flex-end;
+}

@@ -1,20 +1,20 @@
-.component-serch {
+.component-search {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: var(--clr-bg-serch-bar);
+    background-color: var(--clr-bg-search-bar);
     padding: .5rem;
     gap: 3px;
 }
   
-.component-serch__icon {
+.component-search__icon {
     border-right: none;
     text-align: center;
     padding: var(--gutter-sm) var(--gutter-xl);
     background-color: var(--clr-bg-contact);
 }
   
-.component-serch__input {
+.component-search__input {
     flex-grow: 1;
     border: transparent;
     padding: var(--gutter-sm);
