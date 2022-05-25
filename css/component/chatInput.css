@@ -1,0 +1,8 @@
+.chat-input {
+  align-items: center;
+}
+
+.chat-input__text {
+  flex-grow: 1;
+  padding: var(--gutter-sm);
+}

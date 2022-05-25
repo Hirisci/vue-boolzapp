@@ -129,7 +129,21 @@
             <div class="chat-message__bubble-time">12.00</div>
           </div>
         </div>
-        <div class="component chat-input"></div>
+        <div class="component chat-input">
+          <button class="btn btn--input btn--emoticon">
+            <i class="fa-regular fa-face-grin"></i>
+          </button>
+          <input
+            type="text"
+            class="chat-input__text"
+            @keyup.enter="addMessageText()"
+            v-model="messageText"
+            placeholder="Scrivi un messaggio"
+          />
+          <button class="btn btn--input btn--microphone">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+        </div>
       </div>
     </div>
 
