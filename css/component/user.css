@@ -1,11 +1,3 @@
-.component{
-    height: var(--hgt-item);
-    padding: var(--gutter-sm);
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-between;
-}
 
 .component-user{
     background-color: var(--clr-bg-component);

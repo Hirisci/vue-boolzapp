@@ -1,0 +1,25 @@
+.component-notification {
+    padding: var(--gutter-sm) var(--gutter-md);
+    background-color: var(--clr-notification);
+    justify-content: start;
+    align-items: center;
+    gap: var(--gutter-md);
+  }
+  
+  .component-notification__icon{
+    aspect-ratio: 1/1;
+    font-size: 1.25rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: var(--clr-bg-contact);
+    color: var(--clr-notification);
+  }
+  
+  .notification__info-link{
+    opacity: 0.5;
+    font-size: small;
+    text-decoration: underline;
+  }

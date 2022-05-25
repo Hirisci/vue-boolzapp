@@ -46,7 +46,29 @@
                     </button>
                 </div>
             </div>
-            
+            <div class="component component--big component-notification">
+                <div class="component-notification__icon">
+                    <i class="fa-solid fa-bell-slash"></i>
+                  </div>
+                  <div class="notification__info">
+                    <div class="notification__info-text">Ricevi notifiche di nuovi messaggi</div>
+                    <a class="notification__info-link">Attiva notifiche descktop</a>
+                </div>
+            </div>
+            <div class="component component--small component-serch">
+                <div class="component-serch__icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                  <input
+                    class="component-serch__input"
+                    type="text"
+                    placeholder="Inizia o cerca una conversazione"
+                    v-model="filter"
+                  />
+            </div>
+            <div class="component component--scroll component-contacts">
+
+            </div>
         </div>
         <div class="app__rigth">
             <div class="component chat-active">
