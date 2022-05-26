@@ -176,14 +176,19 @@ let app = new Vue({
     imgAvatar(i) {
       return "img/avatar" + this.contacts[i].avatar + ".jpg";
     },
-    // da fare il constrollo
-
     lastMessage(i) {
-      return this.contacts[i].messages.at(1).message;
+      if (!this.contacts[i].messages.at(-1)) {
+        return " ";
+      } else {
+        return this.contacts[i].messages.at(-1).message;
+      }
     },
-    /// da fare il controllo
     getTimeLastMessage(i) {
-      return this.getTimeChat(this.contacts[i].messages.at(1).date);
+      if (!this.contacts[i].messages.at(-1)) {
+        return " ";
+      } else {
+        return this.getTimeChat(this.contacts[i].messages.at(-1).date);
+      }
     },
     getTimeChat(date) {
       return DateTime.fromFormat(
