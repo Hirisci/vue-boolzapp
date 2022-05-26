@@ -169,17 +169,19 @@ let app = new Vue({
     filter: "",
   },
   methods: {
+    getImgAvatar(obj) {
+      console.log(obj);
+      return "img/avatar" + obj.avatar + ".jpg";
+    },
     imgAvatar(i) {
+      console.log();
       return "img/avatar" + this.contacts[i].avatar + ".jpg";
     },
-    lastMessages(i) {
-      return this.contacts[i].messages[this.contacts[i].messages.length - 1];
-    },
     lastMessage(i) {
-      return this.lastMessages(i).message;
+      return this.contacts[i].messages.at(-1);
     },
     getTime(i) {
-      let arr = this.lastMessages(i).date.split(" ");
+      let arr = this.lastMessage(i).date.split(" ");
       arr = arr[1].split(":");
       return `${arr[0]}:${arr[1]}`;
     },
@@ -188,8 +190,12 @@ let app = new Vue({
       arr = arr[1].split(":");
       return `${arr[0]}:${arr[1]}`;
     },
-    selectChat(index) {
-      this.currentChat = index;
+    selectChat(obj) {
+      this.contacts.filter((elm, index) => {
+        if (elm.avatar === obj.avatar) {
+          this.currentChat = index;
+        }
+      });
     },
     addMessageText() {
       let msg = {
@@ -211,7 +217,7 @@ let app = new Vue({
     },
     createDate() {
       let date = new Date();
-      let day = `${date.getDate()}/${date.getDate()}/${date.getDate()}`;
+      let day = date.toLocaleDateString;
       minute = date.getMinutes();
       if (minute.length < 2) {
         minute = "0" + minute;
@@ -223,7 +229,7 @@ let app = new Vue({
   computed: {
     filterByName() {
       return this.contacts.filter((elm) =>
-        elm.name.toLowerCase().startsWith(this.filter)
+        elm.name.toLowerCase().includes(this.filter)
       );
     },
   },
