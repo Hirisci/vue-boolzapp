@@ -1,3 +1,4 @@
+var DateTime = luxon.DateTime;
 let app = new Vue({
   el: "#app",
   data: {
@@ -170,11 +171,9 @@ let app = new Vue({
   },
   methods: {
     getImgAvatar(obj) {
-      console.log(obj);
       return "img/avatar" + obj.avatar + ".jpg";
     },
     imgAvatar(i) {
-      console.log();
       return "img/avatar" + this.contacts[i].avatar + ".jpg";
     },
     lastMessage(i) {
@@ -216,14 +215,7 @@ let app = new Vue({
       }, 1000);
     },
     createDate() {
-      let date = new Date();
-      let day = date.toLocaleDateString;
-      minute = date.getMinutes();
-      if (minute.length < 2) {
-        minute = "0" + minute;
-      }
-      let time = `${date.getHours()}:${minute}:${date.getSeconds()}`;
-      return `${day} ${time}`;
+      return DateTime.now().toFormat("dd'/'LL'/'yyyy' 'HH':'mm':'ss");
     },
   },
   computed: {
