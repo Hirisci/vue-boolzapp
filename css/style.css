@@ -1,242 +1,28 @@
 /*╔═══════════════════════════╗
             HELPERS
   ╚═══════════════════════════╝*/
+
 @import "config/_variable.css";
 @import "config/_reset.css";
 @import "config/_global.css";
 @import "config/_typography.css";
 
-/*--- BTN ---*/
+/*╔═══════════════════════════╗
+            LAYOUT
+  ╚═══════════════════════════╝*/
 
-.btn {
-  background-color: transparent;
-  border: transparent;
-  cursor: pointer;
-}
+@import "layout/app.css";
+@import "layout/component.css";
 
-.btn--user {
-  aspect-ratio: 1/1;
-  height: 1.875rem;
-  font-size: 1.2rem;
-  opacity: 0.3;
-}
+/*╔═══════════════════════════╗
+            COMPONETS
+  ╚═══════════════════════════╝*/
 
-.btn--user:hover {
-  opacity: 1;
-}
-
-.btn--input {
-  padding: 0 var(--gutter-xxl);
-  height: 1.875rem;
-  font-size: 1.2rem;
-}
-
-/*╔═══════════════╗
-    TAG SEMANTICI
-  ╚═══════════════╝*/
-
-/*--- Struttura ---*/
-#app {
-  width: 90%;
-  height: 95%;
-  display: flex;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-}
-
-.app--sx {
-  width: 40%;
-  background-color: var(--clr-bg-contact);
-}
-
-.app--dx {
-  width: 100%;
-  justify-content: space-between;
-}
-
-.app__component {
-  padding: var(--gutter-sm);
-}
-
-.app__coomponet--big {
-  overflow-y: scroll;
-  flex-grow: 1;
-}
-
-.app__component--footer {
-  background-color: var(--clr-bg-footer-msg);
-  height: var(--height-item);
-}
-
-/*--- USER ---*/
-
-.user-info {
-  display: flex;
-  height: var(--height-item);
-  background-color: var(--clr-header-cln);
-  justify-content: space-between;
-}
-
-.user-info__dx,
-.user-info__sx {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.user-info__img {
-  aspect-ratio: 1/1;
-  height: 100%;
-  border-radius: 100%;
-}
-
-/*--- NOTIFICATION ---*/
-
-.notification {
-  padding: var(--gutter-sm) var(--gutter-md);
-  height: var(--height-item);
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: var(--gutter-md);
-  background-color: var(--clr-notification);
-}
-
-.notification__icon {
-  aspect-ratio: 1/1;
-  font-size: 1.25rem;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  background-color: var(--clr-bg-contact);
-  color: var(--clr-notification);
-}
-
-.notification__info a {
-  opacity: 0.5;
-  font-size: small;
-  text-decoration: underline;
-}
-
-/*--- SEARCH-BAR ---*/
-
-.search-bar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: var(--clr-bg-serch-contact);
-  padding: 0.5rem;
-  gap: 3px;
-}
-
-.search-bar__icon {
-  border-right: none;
-  text-align: center;
-  padding: var(--gutter-sm) var(--gutter-xl);
-  background-color: var(--clr-bg-contact);
-}
-
-.search-bar__input {
-  flex-grow: 1;
-  border: transparent;
-  padding: var(--gutter-sm);
-}
-
-/*--- LIST CONTACT ---*/
-
-.contact {
-  height: var(--height-item);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: var(--gutter-sm);
-  border-bottom: 1px solid var(--clr-hover-contact);
-}
-
-.contact:hover {
-  background-color: var(--clr-hover-contact);
-}
-.contact__sx {
-  display: flex;
-  flex-direction: row;
-  gap: var(--gutter-md);
-}
-
-.contact__img {
-  aspect-ratio: 1/1;
-  height: 100%;
-  border-radius: 100%;
-  margin: 0 var(--gutter-md);
-}
-
-.contact__name {
-  font-weight: 700;
-  margin-bottom: var(--gutter-sm);
-}
-
-.contact__last-msg,
-.contact__time {
-  font-size: 0.75rem;
-  opacity: 0.5;
-}
-
-/*--- CHAT ---*/
-
-.chat {
-  background-image: url("../img/mine.jpg");
-  padding: var(--gutter-xxl) 6rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.user-info__access {
-  font-size: 0.75rem;
-  opacity: 0.5;
-}
-
-.row {
-  display: flex;
-}
-
-.row--sent {
-  justify-content: right;
-}
-
-.chat__message--received {
-  background-color: var(--clr-msg-received);
-}
-.chat__message--sent {
-  background-color: var(--clr-msg-sent);
-}
-
-.message {
-  width: 40%;
-  position: relative;
-  padding: 1.5rem;
-  border-radius: 1rem;
-}
-.message__time {
-  font-size: x-small;
-  opacity: 0.5;
-  position: absolute;
-  bottom: 5px;
-  right: 10px;
-}
-
-/*--- INPUT ---*/
-.input {
-  display: flex;
-  width: 100%;
-  gap: var(--gutter-sm);
-}
-.input__text {
-  flex-grow: 1;
-  border: transparent;
-  padding: 0.5rem;
-}
+@import "component/button.css";
+@import "component/user.css";
+@import "component/chatActive.css";
+@import "component/notification.css";
+@import "component/serchBar.css";
+@import "component/contacts.css";
+@import "component/chatMessage.css";
+@import "component/chatInput.css";
