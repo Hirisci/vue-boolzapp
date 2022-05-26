@@ -81,13 +81,11 @@
               <img class="contact__img" :src="getImgAvatar(obj)" alt="foto" />
               <div class="contact__info">
                 <div class="contact__name">{{obj.name}}</div>
-                <div class="contact__last-msg">
-                  {{lastMessage(index).message}}
-                </div>
+                <div class="contact__last-msg">{{lastMessage(index)}}</div>
               </div>
             </div>
             <div class="contact__dx">
-              <div class="contact__time">{{getTime(index)}}</div>
+              <div class="contact__time">{{getTimeLastMessage(index)}}</div>
             </div>
           </div>
         </div>
@@ -105,7 +103,7 @@
                 {{contacts[currentChat].name}}
               </div>
               <div class="chat-active__access">
-                Ultimo ingresso {{getTime(currentChat)}}
+                Ultimo ingresso {{getTimeLastMessage(currentChat)}}
               </div>
             </div>
           </div>
@@ -123,11 +121,24 @@
         </div>
         <div class="component component--scroll chat-message">
           <div
-            v-for="message in contacts[currentChat].messages"
+            v-for="(message, i) in contacts[currentChat].messages"
             class="chat-message__bubble"
             :class="{'chat-message__bubble--received': message.status === 'received', 'chat-message__bubble--sent': message.status === 'sent' }"
           >
             <div class="chat-message__bubble-text">{{message.message}}</div>
+            <div
+              class="chat-message__bubble-open-menu"
+              @click="toggleOpenMenu(message)"
+            >
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+            <div
+              v-show="message.openMenu"
+              class="chat-message__bubble-delete-menu"
+              @click="delateMessage(i)"
+            >
+              cancella messaggio
+            </div>
             <div class="chat-message__bubble-time">
               {{getTimeChat(message.date)}}
             </div>

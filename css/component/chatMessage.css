@@ -5,7 +5,6 @@
 }
 
 .chat-message__bubble {
-  width: 40%;
   position: relative;
   padding: 1.5rem;
   border-radius: 1rem;
@@ -15,15 +14,38 @@
   font-size: x-small;
   opacity: 0.5;
   position: absolute;
-  bottom: 5px;
-  right: 10px;
+  bottom: 0.3125rem;
+  right: 0.625rem;
+}
+
+.chat-message__bubble-open-menu {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem;
+  background-color: inherit;
+  border-radius: 100%;
+  opacity: 0.8;
+}
+
+.chat-message__bubble:hover .chat-message__bubble-open-menu {
+  display: block;
 }
 
 .chat-message__bubble--received {
   background-color: var(--clr-msg-received);
+  align-self: flex-start;
 }
 
 .chat-message__bubble--sent {
   background-color: var(--clr-msg-sent);
   align-self: flex-end;
+}
+
+.chat-message__bubble-delete-menu {
+  position: absolute;
+  right: 0px;
+  top: 0;
 }

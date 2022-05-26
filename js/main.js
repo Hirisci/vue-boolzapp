@@ -176,46 +176,59 @@ let app = new Vue({
     imgAvatar(i) {
       return "img/avatar" + this.contacts[i].avatar + ".jpg";
     },
+    // da fare il constrollo
+
     lastMessage(i) {
-      return this.contacts[i].messages.at(-1);
+      return this.contacts[i].messages.at(1).message;
     },
-    getTime(i) {
-      let arr = this.lastMessage(i).date.split(" ");
-      arr = arr[1].split(":");
-      return `${arr[0]}:${arr[1]}`;
+    /// da fare il controllo
+    getTimeLastMessage(i) {
+      return this.getTimeChat(this.contacts[i].messages.at(1).date);
     },
     getTimeChat(date) {
-      let arr = date.split(" ");
-      arr = arr[1].split(":");
-      return `${arr[0]}:${arr[1]}`;
+      return DateTime.fromFormat(
+        date,
+        "dd'/'LL'/'yyyy' 'HH':'mm':'ss"
+      ).toFormat("HH':'mm");
     },
     selectChat(obj) {
-      this.contacts.filter((elm, index) => {
+      this.contacts.forEach((elm, index) => {
         if (elm.avatar === obj.avatar) {
           this.currentChat = index;
+          return;
         }
       });
     },
     addMessageText() {
+      let msg = this.createMessage();
+      this.contacts[this.currentChat].messages.push(msg);
+      this.messageText = "";
+      setTimeout(() => {
+        let risp = this.createMessage();
+        risp.message = "ok";
+        risp.status = "received";
+        this.contacts[this.currentChat].messages.push(risp);
+      }, 1000);
+      // objDiv.scrollTop = objDiv.scrollHeight;
+    },
+    createMessage() {
       let msg = {
         date: this.createDate(),
         message: this.messageText,
         status: "sent",
+        openMenu: false,
       };
-      this.contacts[this.currentChat].messages.push(msg);
-      this.messageText = "";
-
-      setTimeout(() => {
-        let msg = {
-          date: this.createDate(),
-          message: "ok",
-          status: "received",
-        };
-        this.contacts[this.currentChat].messages.push(msg);
-      }, 1000);
+      return msg;
     },
     createDate() {
       return DateTime.now().toFormat("dd'/'LL'/'yyyy' 'HH':'mm':'ss");
+    },
+    toggleOpenMenu(obj) {
+      obj.openMenu = !obj.openMenu;
+    },
+    delateMessage(i) {
+      this.contacts[this.currentChat].messages.splice(i, 1);
+      console.log(this.contacts[this.currentChat].messages.length);
     },
   },
   computed: {
@@ -224,5 +237,10 @@ let app = new Vue({
         elm.name.toLowerCase().includes(this.filter)
       );
     },
+  },
+  created() {
+    this.contacts.forEach((m) =>
+      m.messages.forEach((x) => Vue.set(x, "openMenu", false))
+    );
   },
 });
